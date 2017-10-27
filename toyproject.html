@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dogge</title>
+    <script>function addLoadEvent(func) {
+        var oldonload = window.onload;
+        if (typeof window.onload != 'function') {
+            window.onload = func;
+        } else {
+            window.onload = function() {
+                oldonload();
+                func();
+            }
+        }
+    }
+
+    function setposition() {
+        var setp = document.getElementById('message');
+        var count = document.getElementById('count');
+        var num = 0
+
+        setp.onmouseover = function () {
+            setp.style.position = 'absolute';
+            var newleft = (Math.random()*500);
+            var newtop = (Math.random()*500);
+
+            setp.style.left = newleft+'px';
+            setp.style.top = newtop+'px';
+            num += 1;
+            count.lastChild.nodeValue =num ;
+        }
+    }
+
+
+    addLoadEvent(setposition)</script>
+</head>
+<body>
+<p style="position: fixed">你抓住了它: <em id="count">0</em> 次 </p>
+<br/>
+<br/>
+<img  id="message" src="data:image/jpeg;base64,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" alt="">
+
+</body>
+</html>
